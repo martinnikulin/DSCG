@@ -1,0 +1,99 @@
+object LoginForm: TLoginForm
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = #1042#1093#1086#1076
+  ClientHeight = 155
+  ClientWidth = 403
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 34
+    Top = 23
+    Width = 96
+    Height = 16
+    Caption = #1055#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1100
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 34
+    Top = 63
+    Width = 50
+    Height = 16
+    Caption = #1055#1072#1088#1086#1083#1100
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object UserCombo: TcxLookupComboBox
+    Left = 154
+    Top = 20
+    ParentFont = False
+    Properties.KeyFieldNames = 'UserId'
+    Properties.ListColumns = <
+      item
+        FieldName = 'UserName'
+      end>
+    Properties.ListOptions.ShowHeader = False
+    Properties.ListOptions.SyncMode = True
+    Properties.ListSource = DM.dsUsers
+    Properties.ReadOnly = False
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -13
+    Style.Font.Name = 'Tahoma'
+    Style.Font.Style = []
+    Style.IsFontAssigned = True
+    TabOrder = 0
+    Width = 207
+  end
+  object PassEdit: TEdit
+    Left = 154
+    Top = 60
+    Width = 207
+    Height = 24
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+  end
+  object OKButton: TcxButton
+    Left = 114
+    Top = 112
+    Width = 82
+    Height = 25
+    Caption = 'OK'
+    TabOrder = 2
+    OnClick = OKButtonClick
+  end
+  object CancelButton: TcxButton
+    Left = 202
+    Top = 112
+    Width = 82
+    Height = 25
+    Caption = #1054#1090#1084#1077#1085#1072
+    TabOrder = 3
+    OnClick = CancelButtonClick
+  end
+end

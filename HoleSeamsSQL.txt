@@ -1,0 +1,24 @@
+select			l.LithologyId as LithologyId,
+				l.BoreholeId,
+				l.DepthFrom as DepthFrom,
+				l.DepthTo as DepthTo,
+				l.Angle,
+				l.Th as Th,
+				l.ThNorm as ThNorm,
+				l.Core,
+				l.CoreNorm as CoreNorm,
+				l.CoreProc as CoreProc,
+				l.RockId as RockId,
+				l.SolidRock,
+				l.Formation,
+				--s.Description as SeamName
+        '1' as SeamName
+from        	Lithology l
+left join   	HoleSeams hs on
+				hs.InterbedId = :InterbedId and
+				hs.BoreholeId = l.BoreholeId and
+				hs.DepthFrom <= l.DepthFrom and
+				hs.DepthTo >= l.DepthTo
+left join   	Seams s on s.SeamId = hs.SeamId
+where   		(l.BoreholeId = :BoreholeId) and ((l.DepthFrom >= :DepthFrom) and (l.DepthTo <= :DepthTo) or (:all = 1))
+order by  		l.BoreholeId, l.DepthTo
